@@ -5,120 +5,326 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="web128x128.ico" type="image/x-icon">
     <title>BLOCK-SOFT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 全局样式 */
-        body {
+        :root {
+            --primary: #007acc;
+            --primary-dark: #005ca8;
+            --secondary: #6c5e94;
+            --accent: #72acc0;
+            --light-bg: #f9f9f9;
+            --dark-text: #333;
+            --light-text: #fff;
+            --gray-text: #555;
+            --light-gray: #f1f1f1;
+            --white: #fff;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f900;
-            color: #333333e5;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        /* 顶部导航菜单 */
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 导航栏样式改进 */
         .nav {
-            background-color: #007acc;
-            padding: 10px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 15px 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
+        
         .nav a {
-            color: #fff;
+            color: var(--light-text);
             text-decoration: none;
             margin: 0 15px;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 18px;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
         }
-
+        
         .nav a:hover {
-            text-decoration: underline;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            transform: translateY(-2px);
         }
-
-        /* 顶部欢迎部分 */
+        
+        /* 头部样式改进 */
         .header {
-            background-color: #f1f1f1;
+            background-color: var(--white);
             text-align: center;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 60px 20px 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
         }
-
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
         .header img {
-            max-width: 150px;
-            margin-bottom: 15px;
+            max-width: 200px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
         }
-
+        
+        .header img:hover {
+            transform: scale(1.05);
+        }
+        
         .header h2 {
-            font-size: 28px;
-            margin: 0px 0;
-            color: #6c5e94;
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: var(--secondary);
+            font-weight: 700;
+            line-height: 1.2;
         }
-
+        
         .header h4 {
             font-size: 18px;
-            margin: 3px 0;
-            color: #72acc0;
+            margin: 8px 0 20px;
+            color: var(--accent);
+            font-weight: 500;
+            font-style: italic;
         }
-
-        /* 内容部分 */
-        .content{
+        
+        .header p {
+            font-size: 18px;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 主要内容区样式改进 */
+        .content {
             max-width: 800px;
-            margin: 32px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            line-height: 1.7;
-            color: #555;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            line-height: 1.8;
+            color: var(--gray-text);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-
+        
+        .content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        .content h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+        
         .content p {
-            font-size: 16px;
-            margin: 0;
+            font-size: 17px;
+            margin-bottom: 20px;
         }
-
-        /* 底部链接部分 */
+        
+        /* 页脚样式改进 */
         .footer {
-            background-color: #b4fdfd;
+            background: linear-gradient(135deg, #b4fdfd 0%, #e0f7ff 100%);
             text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #333;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px;
+            font-size: 15px;
+            color: var(--dark-text);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
         }
-
-        .footer a {
-            color: #007acc;
+        
+        .footer-links {
+            margin: 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--primary);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
         }
-
-        .footer a:hover {
-            text-decoration: underline;
+        
+        .footer-links a:hover {
+            background-color: rgba(0, 122, 204, 0.1);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .footer p {
+            margin: 15px 0;
+            font-size: 14px;
+            color: var(--gray-text);
+        }
+        
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--gray-text);
+            font-size: 13px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header h2 {
+                font-size: 28px;
+            }
+            
+            .header h4 {
+                font-size: 16px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .content h4 {
+                font-size: 22px;
+            }
+            
+            .nav a {
+                margin: 0 10px;
+                font-size: 16px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links a {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 50px 15px 30px;
+            }
+            
+            .header h2 {
+                font-size: 24px;
+            }
+            
+            .nav {
+                padding: 10px 0;
+            }
+            
+            .nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
+    <nav class="nav" aria-label="主导航">
         <a href="https://bs-o.github.io">首页</a>
         <a href="https://bs-o.github.io/dl">下载</a>
         <a href="https://bs-o.github.io/c">关于</a>
     </nav>
+    
     <header class="header">
-        <img src="web-home-logo.png" alt="Block-Soft">
-        <h2><strong>欢迎访问BLOCK-SOFT官方网站!</strong></h2>
-        <h4><b>Welcome To BLOCK-SOFT Official WebSite!</b></h4>
+        <div class="header-content">
+            <img src="web-home-logo.png" alt="Block-Soft LOGO">
+            <h2>欢迎访问 BLOCK-SOFT 官方网站!</h2>
+            <h4>Welcome To BLOCK-SOFT Official WebSite!</h4>
+        </div>
     </header>
+    
     <main class="content">
-        <h4><strong>Hello.</strong></h4> 
-        <p>BLOCK-SOFT</p>
+        <h4>你好，BLOCK-SOFT</h4>
     </main>
+    
     <footer class="footer">
-        <h4><strong>BLOCK-SOFT-Web-Site-URL : <em><a href='bs-o.github.io'>bs-o.github.io</a></em></strong></h4>
-        <em><a href="https://space.bilibili.com/3494362073794678">作者BiliBili主页</a></em>
-        <em><a href="https://github.com/BS-O/bs-o.github.io">此网站GitHub仓库</a></em>
-        <p><b>GITHUB.IO网站太慢?使用更快的SXL.CN网站</p><em><a href="b-s.mysxl.cn">b-s.mysxl.cn</a></b></em>
-        <p>Programming language(s) : HTML</p>
-        <strong>© 2025 BLOCK-SOFT. All rights reserved.</strong>
+        <div class="footer-links">
+            <strong>BLOCK-SOFT-Web-Site-URL: 
+                <a href="https://bs-o.github.io" target="_blank" rel="noopener">bs-o.github.io</a>
+            </strong>
+            <br>
+            <a href="https://space.bilibili.com/3494362073794678" target="_blank" rel="noopener">作者BiliBili主页</a>
+            <a href="https://github.com/BS-O/bs-o.github.io" target="_blank" rel="noopener">此网站GitHub仓库</a>
+            <a href="https://b-s.mysxl.cn" target="_blank" rel="noopener">b-s.mysxl.cn(更快的SXL.CN镜像)</a>
+        </div>
+        <p>Programming language(s): HTML, CSS, JavaScript</p>
+        <div class="footer-bottom">
+            <p>© 2025 BLOCK-SOFT. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
