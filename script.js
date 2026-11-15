@@ -1,17 +1,39 @@
-// ÕâÀï¿ÉÒÔÌí¼ÓÍøÕ¾ËùÐèµÄJavaScript´úÂë
-// Ä¿Ç°Ô­HTMLÖÐÃ»ÓÐJavaScript´úÂë£¬Äú¿ÉÒÔÔÚÕâÀïÌí¼Ó½»»¥¹¦ÄÜ
+// BLOCK-SOFT å®˜æ–¹ç½‘ç«™ â€” äº¤äº’è„šæœ¬
+// è®¾è®¡åŽŸåˆ™ï¼šHTML ä¸Ž CSS å·²ä¿è¯å®Œæ•´å¯ç”¨æ€§ï¼ŒJavaScript ä»…åšæ¸è¿›å¢žå¼ºã€‚
 
-// Ê¾Àý£ºÌí¼ÓÒ³Ãæ¼ÓÔØÍê³ÉºóµÄÌáÊ¾
-document.addEventListener('DOMContentLoaded', function() {
-    // ¿ÉÒÔÔÚÕâÀïÌí¼Ó³õÊ¼»¯´úÂë
-    console.log('BLOCK-SOFTÍøÕ¾¼ÓÔØÍê³É');
-    
-    // Ê¾Àý£ºÎªµ¼º½Á´½ÓÌí¼Óµã»÷ÊÂ¼þ
-    const navLinks = document.querySelectorAll('.nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            console.log('µ¼º½µ½: ' + this.href);
-            // ¿ÉÒÔÔÚÕâÀïÌí¼Ó×Ô¶¨Òåµ¼º½ÐÐÎª
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('BLOCK-SOFT å®˜æ–¹ç½‘ç«™å·²åŠ è½½');
+
+    // ä¸ºæ‰€æœ‰èƒ¶å›ŠæŒ‰é’®æ·»åŠ ç³»ç»Ÿçº§æŒ‰åŽ‹å¾®äº¤äº’ï¼ˆscale 0.95ï¼‰
+    const pills = document.querySelectorAll('.btn-primary, .btn-secondary-pill, .nav-cta');
+    pills.forEach(function (btn) {
+        btn.addEventListener('pointerdown', function () {
+            btn.style.transform = 'scale(0.95)';
+        });
+        btn.addEventListener('pointerup', function () {
+            btn.style.transform = '';
+        });
+        btn.addEventListener('pointerleave', function () {
+            btn.style.transform = '';
         });
     });
+
+    // å¯¼èˆªæ ï¼šæ»šåŠ¨åŽæ”¶ç´§é˜´å½±/èƒŒæ™¯ï¼ˆæ¸è¿›å¢žå¼ºï¼Œæ—  JS ä¹Ÿä¸å½±å“ä½¿ç”¨ï¼‰
+    const nav = document.querySelector('.global-nav');
+    if (nav) {
+        let ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    if (window.scrollY > 8) {
+                        nav.style.boxShadow = '0 1px 0 rgba(255,255,255,0.08)';
+                    } else {
+                        nav.style.boxShadow = 'none';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
 });
