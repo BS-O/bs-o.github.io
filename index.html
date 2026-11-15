@@ -7,41 +7,123 @@
     <title>BLOCK-SOFT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="nav" aria-label="主导航">
-        <a href="https://bs-o.github.io">首页</a>
-        <a href="https://bs-o.github.io/dl">下载</a>
-        <a href="https://bs-o.github.io/c">关于</a>
+
+    <!-- Global Nav — pure black, ultra-thin -->
+    <nav class="global-nav" aria-label="全局导航">
+        <div class="global-nav-content">
+            <a class="nav-brand" href="https://bs-o.github.io">BLOCK-SOFT</a>
+            <div class="nav-links">
+                <a href="https://bs-o.github.io">首页</a>
+                <a href="https://bs-o.github.io/dl">下载</a>
+                <a href="https://bs-o.github.io/c">社区</a>
+            </div>
+            <a class="nav-cta" href="https://bs-o.github.io/dl">下载</a>
+        </div>
     </nav>
-    
-    <header class="header">
-        <div class="header-content">
-            <img src="web-home-logo.png" alt="Block-Soft LOGO">
-            <h2>欢迎访问 BLOCK-SOFT 官方网站!</h2>
-            <h4>Welcome To BLOCK-SOFT Official WebSite!</h4>
+
+    <!-- Sub Nav — frosted parchment -->
+    <div class="sub-nav">
+        <div class="sub-nav-content">
+            <span class="sub-nav-title">BLOCK-SOFT</span>
+            <a class="sub-nav-link" href="https://github.com/BS-O/bs-o.github.io">GitHub 仓库</a>
         </div>
-    </header>
-    
-    <main class="content">
-        <h4>你好，BLOCK-SOFT</h4>
+    </div>
+
+    <main>
+
+        <!-- Hero Tile — white, full-bleed -->
+        <section class="tile tile-light hero">
+            <img class="hero-logo" src="web-home-logo.png" alt="BLOCK-SOFT LOGO">
+            <h1 class="hero-headline">欢迎来到 BLOCK-SOFT 官方网站。</h1>
+            <p class="hero-tagline">简洁、克制、专注。</p>
+            <div class="hero-ctas">
+                <a class="btn-primary" href="https://bs-o.github.io/dl">前往下载</a>
+                <a class="btn-secondary-pill" href="https://bs-o.github.io/c">加入社区</a>
+            </div>
+        </section>
+
+        <!-- Product Tile — parchment, editorial intro -->
+        <section class="tile tile-parchment">
+            <div class="tile-inner">
+                <h2 class="display-lg">你好，这是 BLOCK-SOFT。</h2>
+                <p class="lead">一个以「少即是多」为信条的独立工作室。我们不堆砌功能，只打磨每一次交互与每一行代码 —— 让工具回到它本该有的样子。</p>
+            </div>
+        </section>
+
+        <!-- Utility Tile — white, link cards -->
+        <section class="tile tile-light">
+            <div class="tile-inner">
+                <h2 class="display-lg">探索更多。</h2>
+                <div class="utility-grid">
+                    <a class="utility-card" href="https://bs-o.github.io/dl">
+                        <span class="card-eyebrow">下载</span>
+                        <span class="card-title">获取我们的作品</span>
+                        <span class="card-link">前往下载 ›</span>
+                    </a>
+                    <a class="utility-card" href="https://github.com/BS-O/bs-o.github.io">
+                        <span class="card-eyebrow">开源</span>
+                        <span class="card-title">本项目 GitHub 仓库</span>
+                        <span class="card-link">查看源码 ›</span>
+                    </a>
+                    <a class="utility-card" href="https://bs-o.github.io/c">
+                        <span class="card-eyebrow">社区</span>
+                        <span class="card-title">与同好一起交流</span>
+                        <span class="card-link">加入社区 ›</span>
+                    </a>
+                    <a class="utility-card" href="https://space.bilibili.com/3494362073794678">
+                        <span class="card-eyebrow">视频</span>
+                        <span class="card-title">官方 Bilibili 频道</span>
+                        <span class="card-link">去围观 ›</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Tile — near-black, community -->
+        <section class="tile tile-dark">
+            <div class="tile-inner">
+                <h2 class="display-lg">社区，因你而完整。</h2>
+                <p class="lead">无论你是开发者、设计者还是普通用户，BLOCK-SOFT 社区都为你留了一个位置。提出建议、报告问题、或者只是打个招呼。</p>
+                <div class="hero-ctas">
+                    <a class="btn-primary" href="https://bs-o.github.io/c">进入社区</a>
+                    <a class="btn-secondary-pill" href="https://b-s.mysxl.cn">访问博客</a>
+                </div>
+            </div>
+        </section>
+
     </main>
-    
+
+    <!-- Footer — parchment, dense links -->
     <footer class="footer">
-        <div class="footer-links">
-            <strong>BLOCK-SOFT-Web-Site-URL: 
-                <a href="https://bs-o.github.io" target="_blank" rel="noopener">bs-o.github.io</a>
-            </strong>
-            <br>
-            <a href="https://space.bilibili.com/3494362073794678" target="_blank" rel="noopener">作者BiliBili主页</a>
-            <a href="https://github.com/BS-O/bs-o.github.io" target="_blank" rel="noopener">此网站GitHub仓库</a>
-            <a href="https://b-s.mysxl.cn" target="_blank" rel="noopener">b-s.mysxl.cn(更快的SXL.CN镜像)</a>
-        </div>
-        <p>Programming language(s): HTML, CSS, JavaScript</p>
-        <div class="footer-bottom">
-            <p>© 2025 BLOCK-SOFT. All rights reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4 class="col-heading">官方网站</h4>
+                    <a class="dense-link" href="https://bs-o.github.io">bs-o.github.io</a>
+                    <a class="dense-link" href="https://bs-o.github.io/dl">下载中心</a>
+                    <a class="dense-link" href="https://bs-o.github.io/c">社区</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="col-heading">外部链接</h4>
+                    <a class="dense-link" href="https://space.bilibili.com/3494362073794678" target="_blank" rel="noopener">官方 Bilibili</a>
+                    <a class="dense-link" href="https://github.com/BS-O/bs-o.github.io" target="_blank" rel="noopener">GitHub 仓库</a>
+                    <a class="dense-link" href="https://b-s.mysxl.cn" target="_blank" rel="noopener">b-s.mysxl.cn（MkDocs 博客）</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="col-heading">技术栈</h4>
+                    <span class="dense-static">HTML</span>
+                    <span class="dense-static">CSS</span>
+                    <span class="dense-static">JavaScript</span>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>© 2025 BLOCK-SOFT. All rights reserved.</p>
+                <p class="brand-mark">Designed with a touch of teal.</p>
+            </div>
         </div>
     </footer>
 
